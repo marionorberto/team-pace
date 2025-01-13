@@ -1,0 +1,206 @@
+<section
+  [ngStyle]="{ 'w-[6vw]': menuColapsed.status }"
+  class="bg-neutral-900 w-[{{
+    menuColapsed.width
+  }}] w-[15vw] h-full flex flex-col justify-stretch pt-4 items-start ps-4 overflow-x-hidden overflow-y-auto "
+>
+  <div class="flex justify-between items-center w-full pe-3">
+    <button
+      *ngIf="!menuColapsed.status"
+      routerLink="/
+    teampace/dashboard/overview"
+    >
+      <h1
+        class="font-bold text-amber-50 rounded-md px-3 py-2 bg-slate-800 mb-3"
+      >
+        Team<span class="text-[#e6b400] font-bold">Pace</span>
+      </h1>
+    </button>
+    <div
+      *ngIf="!menuColapsed.status"
+      (click)="onColapseMenu()"
+      class="rounded-md hover:bg-neutral-900 mb-2 flex flex-col justify-center items-center gap-1"
+    >
+      <div class="bg-neutral-700 h-[3px] w-6"></div>
+      <div class="bg-neutral-700 h-[3px] w-6"></div>
+      <div class="bg-neutral-700 h-[3px] w-6"></div>
+    </div>
+    <mat-icon
+      class="text-neutral-700 rotate-90 mx-auto"
+      *ngIf="menuColapsed.status"
+      (click)="onColapseMenu()"
+      >expand</mat-icon
+    >
+  </div>
+  <div class="flex flex-col justify-center items-start w-full">
+    <ul class="w-full pe-2 {{ menuColapsed.status ? 'mx-auto' : '' }}">
+      <li
+        routerLink="/teampace/dashboard/my-projects"
+        routerLinkActive="navbar-active"
+        class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full px-3 py-2 flex justify-between items-center text-sm {{
+          menuColapsed.status ? 'mx-auto' : ''
+        }}"
+      >
+        <div class="flex justify-start items-center gap-2">
+          <div class="p-[3px] bg-neutral-500 rounded-full"></div>
+          <span *ngIf="!menuColapsed.status" class="text-sm">My Projects</span>
+        </div>
+      </li>
+      <li
+        routerLink="/teampace/dashboard/activities"
+        routerLinkActive="navbar-active"
+        class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full px-3 py-2 flex justify-between items-center text-sm"
+      >
+        <div class="flex justify-start items-center gap-2">
+          <div class="p-[3px] bg-neutral-500 rounded-full"></div>
+          <span *ngIf="!menuColapsed.status" class="text-sm">Activities</span>
+        </div>
+      </li>
+    </ul>
+    <div class="w-full mt-3">
+      <div class="flex justify-center items-center gap-3">
+        <h3 *ngIf="!menuColapsed.status" class="text-neutral-400 ms-3 text-sm">
+          Menu
+        </h3>
+        <div class="w-full h-[1px] bg-neutral-800 me-2 my-2"></div>
+      </div>
+      <ul class="w-full pe-2">
+        <li
+          routerLink="/teampace/dashboard/overview"
+          routerLinkActive="navbar-active"
+          class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full px-3 py-2 flex justify-start items-center text-sm"
+        >
+          <mat-icon
+            class="text-base"
+            aria-hidden="false"
+            fontIcon="window"
+          ></mat-icon>
+          <span *ngIf="!menuColapsed.status">Overview</span>
+        </li>
+        <li
+          routerLink="/teampace/dashboard/projects"
+          routerLinkActive="navbar-active"
+          class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full {{
+            menuColapsed.status ? 'w-' : ''
+          }} px-3 py-2 flex justify-start items-center text-sm"
+        >
+          <mat-icon
+            class="text-base"
+            aria-hidden="false"
+            fontIcon="folder"
+          ></mat-icon>
+          <span *ngIf="!menuColapsed.status">Projects</span>
+        </li>
+        <li
+          routerLink="/teampace/dashboard/team-members"
+          routerLinkActive="navbar-active"
+          class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full px-3 py-2 flex justify-start items-center text-sm"
+        >
+          <mat-icon
+            class="text-base"
+            aria-hidden="false"
+            fontIcon="group"
+          ></mat-icon>
+          <span *ngIf="!menuColapsed.status">Team Members</span>
+        </li>
+        <li
+          routerLink="/teampace/dashboard/settings/profile"
+          routerLinkActive="navbar-active"
+          class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full px-3 py-2 flex justify-start items-center text-sm"
+        >
+          <mat-icon
+            class="text-base"
+            aria-hidden="false"
+            fontIcon="settings"
+          ></mat-icon>
+          <span *ngIf="!menuColapsed.status">Settings</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-full mt-3">
+      <div class="flex justify-center items-center gap-3">
+        <h3 *ngIf="!menuColapsed.status" class="text-neutral-400 ms-3 text-sm">
+          Recents
+        </h3>
+        <div class="w-full h-[1px] bg-neutral-800 me-2 my-2"></div>
+      </div>
+      <ul class="w-full pe-2">
+        <li
+          *ngFor="let item of recentProject; let i = index"
+          class="text-neutral-500 hover:text-neutral-300 hover:bg-neutral-800 rounded-md w-full px-3 py-2 flex justify-start items-center gap-2 text-sm"
+        >
+          <div class="flex justify-center items-center gap-2">
+            <mat-icon class="text-base" aria-hidden="false"
+              >open_in_new</mat-icon
+            >
+            <span *ngIf="!menuColapsed.status">
+              {{ item }}
+              <span
+                *ngIf="i == 0"
+                class="rounded-md font-bold px-[3px] py-[1px] bg-transparent text-[#e6b400] text-[12px]"
+                >New*</span
+              >
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="menuColapsed.status" class="my-5">
+      <div
+        class="rounded-full border-[1px] border-neutral-800 flex flex-col justify-center items-center w-8"
+      >
+        <span
+          (click)="onChangeDisplayMode('dark')"
+          class="{{
+            displayMode == 'dark' ? 'bg-neutral-800' : ''
+          }} rounded-full flex justify-center items-center py-2 pb-1 pt-2 px-1 text-center"
+        >
+          <mat-icon
+            class="text-neutral-500 text-sm flex justify-center items-center"
+            >dark_mode</mat-icon
+          >
+        </span>
+        <span
+          (click)="onChangeDisplayMode('light')"
+          class="{{
+            displayMode == 'light' ? 'bg-neutral-800' : ''
+          }} rounded-full flex justify-center items-center py-2 pt-1 px-1 text-center"
+        >
+          <mat-icon class="text-neutral-500 text-sm" aria-hidden="false"
+            >light_mode</mat-icon
+          >
+        </span>
+      </div>
+    </div>
+
+    <div *ngIf="!menuColapsed.status" class="my-5">
+      <div
+        class="rounded-full border-[1px] border-neutral-800 flex justify-center items-center gap-0"
+      >
+        <span
+          (click)="onChangeDisplayMode('dark')"
+          class="{{
+            displayMode == 'dark' ? 'bg-neutral-800' : ''
+          }} rounded-full flex justify-center items-center px-2 pe-4"
+        >
+          <mat-icon
+            class="text-neutral-500 text-sm flex justify-center items-center"
+            aria-hidden="false"
+            >dark_mode</mat-icon
+          >
+        </span>
+        <span
+          (click)="onChangeDisplayMode('light')"
+          class="{{
+            displayMode == 'light' ? 'bg-neutral-800' : ''
+          }} flex justify-center items-center rounded-full px-2 ps-4"
+        >
+          <mat-icon class="text-neutral-500 text-sm" aria-hidden="false"
+            >light_mode</mat-icon
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

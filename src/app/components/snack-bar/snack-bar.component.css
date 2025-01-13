@@ -1,0 +1,8 @@
+::ng-deep .success-snackbar {
+  --mdc-snackbar-container-color: black;
+  --mat-mdc-snack-bar-button-color: white;
+  --mat-sys-inverse-on-surface: #999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

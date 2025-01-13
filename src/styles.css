@@ -1,0 +1,76 @@
+@import url("../node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-Variable-Font.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@use "@angular/material" as mat;
+
+@include mat.snack-bar-overrides(
+  (
+    container-color: orange,
+    supporting-text-color: red,
+  )
+);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  font-family: "Inter";
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.color-prime {
+  color: #e0b107;
+}
+
+.bg-prime {
+  background-color: #e0b107;
+}
+
+#loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #2c2b2b;
+  border-top-color: #a5a20e;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

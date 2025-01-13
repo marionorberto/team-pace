@@ -1,0 +1,152 @@
+<section class="w-[32rem] bg-neutral-800 border-t-2 border-[#e6b400]">
+  <mat-dialog-actions class="flex justify-between items-center">
+    <h2
+      class="mb-2 font-semibold flex justify-start items-center"
+      mat-dialog-title
+    >
+      Schedule a New Meeting
+      <mat-icon class="text-xl font-light text-neutral-300"
+        >interpreter_mode</mat-icon
+      >
+    </h2>
+    <button mat-button mat-dialog-close class="absolute right-4 top-7">
+      <img class="w-8 h-8" src="../../../assets/images/x.svg" alt="" />
+    </button>
+  </mat-dialog-actions>
+  <mat-dialog-content>
+    <div class="w-full px-3">
+      <div class="flex flex-col justify-center items-start">
+        <label for="projectName" class="text-sm font-semibold mb-2"
+          >Meeting Title*
+        </label>
+        <input
+          id="meetingTitle"
+          placeholder="Meeting Title"
+          class="py-2 ps-4 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-neutral-900"
+          type="text"
+          required
+        />
+      </div>
+      <div class="flex flex-col justify-center items-start mt-3">
+        <label for="projectName" class="text-sm font-semibold mb-2"
+          >Description*
+        </label>
+
+        <textarea
+          class="text-sm py-2 ps-4 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-black"
+          id="description"
+          placeholder="Add a brief description"
+        ></textarea>
+      </div>
+
+      <div class="flex justify-center items-center gap-3">
+        <div class="flex flex-col justify-center items-start mt-3 w-full">
+          <label for="startDate" class="text-sm font-semibold mb-2"
+            >Date of beginning*</label
+          >
+          <input
+            class="text-sm py-2 ps-4 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-black"
+            type="date"
+            id="startDate"
+            required
+          />
+        </div>
+        <div class="flex flex-col justify-center items-start mt-3 w-full">
+          <label for="startDate" class="text-sm font-semibold mb-2"
+            >Time of beginning*</label
+          >
+          <input
+            class="text-sm py-2 ps-4 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-black"
+            type="time"
+            id="startTime"
+            required
+          />
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-start mt-3">
+        <label for="projectStatus" class="text-sm font-semibold mb-2"
+          >Initial Status *</label
+        >
+        <select
+          id="projectStatus"
+          class="text-sm py-2 ps-4 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-black"
+          required
+        >
+          <option class="text-sm" value="" disabled selected>
+            Select duration
+          </option>
+          <option class="text-sm" value="15">15 minutes</option>
+          <option class="text-sm" value="30">30 minutes</option>
+          <option class="text-sm" value="60">1 hour</option>
+          <option class="text-sm" value="120">2 hours</option>
+          <option class="text-sm" value="180">3 hours</option>
+          <option class="text-sm" value="240">4 hours</option>
+        </select>
+      </div>
+      <div class="flex flex-col justify-center items-start mt-3">
+        <label for="endDate" class="text-sm font-semibold mb-2"
+          >Participants *</label
+        >
+        <div class="relative w-full">
+          <input
+            class="text-sm py-2 ps-4 pe-20 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-black"
+            type="email"
+            [(ngModel)]="participant"
+            id="participants"
+            (keydown.enter)="onAddParticipants($event.target)"
+            required
+            placeholder="Type an email and press Enter"
+          />
+          <button
+            class="cursor-pointer py-1 px-2 absolute top-[5px] right-2 bg-neutral-800 text-neutral-300 text-sm rounded-md hover:bg-opacity-80"
+          >
+            +add
+          </button>
+        </div>
+        <div class="grid grid-cols-4 mt-2 gap-x-4">
+          <button
+            (click)="onDeleteParticipant(participant)"
+            *ngFor="let participant of participantCollection"
+            class="text-sm font-medium bg-neutral-900 rounded-md p-2 text-slate-600 hover:opacity-85 flex justify-center items-center gap-1 cursor-pointer"
+          >
+            {{ participant }}
+            <i
+              class="bi bi-trash font-semibold text-red-300 flex justify-center items-center"
+            ></i>
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-start mt-3">
+        <label for="endDate" class="text-sm font-semibold mb-2"
+          >Video Conference Link:</label
+        >
+        <input
+          class="text-sm py-2 ps-4 px-2 w-full rounded-md text-neutral-600 border-[1px] border-neutral-600 bg-black"
+          type="url"
+          placeholder="Paste the meeting link (if applicable)"
+          id="videoConferenceLink"
+          required
+        />
+      </div>
+
+      <div class="w-full h-[1px] bg-neutral-700 me-2 my-2 mt-5"></div>
+
+      <div class="w-full h-[1px] bg-neutral-700 me-2 my-2 mb-5"></div>
+
+      <div class="flex justify-start items-center gap-3 mt-3">
+        <button
+          (click)="onSaveCreateNewMeet()"
+          class="text-sm rounded-md font-medium hover:opacity-80 px-5 py-2 bg-[#e6b400] text-white"
+        >
+          Submit
+        </button>
+        <button
+          (click)="onCancelCreateNewMeet()"
+          class="text-sm rounded-md font-medium hover:opacity-80 bg-neutral-900 text-neutral-400 px-5 py-2"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </mat-dialog-content>
+</section>

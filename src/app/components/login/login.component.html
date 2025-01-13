@@ -1,0 +1,106 @@
+<section class="flex w-full h-full">
+  <div class="w-1/2 relative">
+    <h2 class="absolute top-16 left-14 text-black font-bold text-5xl">
+      Sign in to <br />
+      your <span class="text-amber-100">Account</span>
+    </h2>
+    <img class="w-full" src="../../../assets/images/login-bg-img.jpg" alt="" />
+  </div>
+  <section
+    class="w-1/2 bg-neutral-900 flex flex-col justify-stretch pt-16 items-center p-4"
+  >
+    <h1 class="font-bold text-amber-50 rounded-md px-3 py-2 bg-slate-800 mb-3">
+      Team<span class="text-amber-200 font-bold">Pace</span>
+    </h1>
+    <form
+      method="post"
+      ngNativeValidate
+      class="p-3 px-4 w-[30rem] bg-black rounded-md shadow-lg flex flex-col gap-4"
+    >
+      <h1
+        class="text-lg my-4 text-start font-semibold text-zinc-300 opacity-70"
+      >
+        Welcome back to TeamPace 👋🏽
+      </h1>
+      <div class="w-full flex flex-col">
+        <label for="email" class="text-neutral-600 text-lg">Email</label>
+        <input
+          type="text"
+          id="email"
+          required
+          [(ngModel)]="email"
+          name="Email"
+          class="bg-neutral-800 text-lg p-4 py-3 rounded-md"
+          placeholder="E-mail"
+          required
+        />
+      </div>
+      <div class="relative w-full flex flex-col">
+        <label for="password" class="text-neutral-600 text-lg">Password</label>
+
+        <input
+          type="{{ visible ? 'text' : 'password' }}"
+          id="password"
+          required
+          [(ngModel)]="password"
+          name="password"
+          class="bg-neutral-800 text-lg p-4 rounded-md py-3"
+          placeholder="Password"
+          required
+        />
+        <i
+          (click)="toggle()"
+          class="tiny material-icons text-zinc-300 text-[22px] cursor-pointer absolute right-1 top-12"
+          >{{ visible ? "visibility" : "visibility_off" }}</i
+        >
+      </div>
+      <div class="flex justify-end items-center">
+        <a
+          routerLink="/teampace/forget-password"
+          class="hover:underline color-prime hover:opacity-60 text-sm text-center cursor-pointer"
+        >
+          forgot password
+        </a>
+      </div>
+
+      <button
+        (click)="onSubmit()"
+        type="submit"
+        class="font-semibold text-lg color-prime w-full p-3 bg-neutral-800 hover:opacity-80 rounded-md"
+      >
+        Login
+      </button>
+      <p
+        class="text-center font-semibold rounded-md text-red-400 bg-red-200 py-2"
+        *ngFor="let errors of errorMessage"
+      >
+        {{ errorMessage }}
+      </p>
+      <div class="flex flex-col justify-center items-between mt-3">
+        <div class="flex justify-start items-center gap-2 mb-2">
+          <span class="opacity-60">Sign In with</span>
+          <div class="flex justify-start items-center gap-2">
+            <div
+              class="rounded-md bg-neutral-800 w-7 h-7 hover:opacity-85"
+            ></div>
+            <div
+              class="rounded-md bg-neutral-800 w-7 h-7 hover:opacity-85"
+            ></div>
+            <div
+              class="rounded-md bg-neutral-800 w-7 h-7 hover:opacity-85"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <span class="opacity-60">Don't have an account</span>
+          <a
+            routerLink="/teampace/register"
+            class="hover:underline color-prime hover:opacity-60 text-sm text-center cursor-pointer"
+          >
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </form>
+  </section>
+</section>

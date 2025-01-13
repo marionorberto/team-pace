@@ -1,0 +1,135 @@
+<section class="flex h-full w-full">
+  <div class="w-1/2 relative">
+    <h2 class="absolute top-12 left-14 text-white font-bold text-5xl">
+      Sign up to <br />
+      the <span class="text-black">TeamPace</span>
+    </h2>
+    <img
+      class="w-full h-full"
+      src="../../../assets/images/register.jpg"
+      alt=""
+    />
+  </div>
+  <section
+    class="bg-neutral-900 w-1/2 flex flex-col justify-center items-center p-4"
+  >
+    <h1 class="font-bold text-amber-50 rounded-md px-3 py-2 bg-slate-800 mb-3">
+      Team<span class="text-amber-200 font-bold">Pace</span>
+    </h1>
+    <form
+      method="post"
+      ngNativeValidate
+      class="p-3 px-4 w-[30rem] bg-black rounded-md shadow-lg flex flex-col gap-4"
+    >
+      <h1
+        class="text-lg my-4 text-start font-semibold text-zinc-300 opacity-70"
+      >
+        Welcome to TeamPace 🙂
+      </h1>
+      <div class="w-full flex flex-col">
+        <label for="email" class="text-neutral-600 text-lg">Email</label>
+        <input
+          type="text"
+          id="email"
+          required
+          [(ngModel)]="email"
+          name="Email"
+          class="bg-neutral-800 text-lg p-4 rounded-md"
+          placeholder="E-mail"
+          required
+        />
+      </div>
+      <div class="relative w-full flex flex-col">
+        <label for="password" class="text-neutral-600 text-lg">Password</label>
+
+        <input
+          type="{{ visible ? 'text' : 'password' }}"
+          id="password"
+          required
+          [(ngModel)]="password"
+          name="password"
+          class="bg-neutral-800 text-lg p-4 rounded-md"
+          placeholder="Password"
+          required
+        />
+        <i
+          (click)="toggle()"
+          class="tiny material-icons text-zinc-300 text-[22px] cursor-pointer absolute right-1 top-12"
+          >{{ visible ? "visibility" : "visibility_off" }}</i
+        >
+      </div>
+      <div class="relative w-full flex flex-col">
+        <label for="repeatPassword" class="text-neutral-600 text-lg"
+          >Repeat Password</label
+        >
+
+        <input
+          type="{{ visible ? 'text' : 'password' }}"
+          id="repeatPassword"
+          required
+          [(ngModel)]="repeatPassword"
+          name="repeatPassword"
+          class="bg-neutral-800 text-lg p-4 rounded-md"
+          placeholder="Repeat Password"
+          required
+        />
+        <i
+          (click)="toggle()"
+          class="tiny material-icons text-zinc-300 text-[22px] cursor-pointer absolute right-1 top-12"
+          >{{ visible ? "visibility" : "visibility_off" }}</i
+        >
+      </div>
+      <div class="text-sm flex justify-end items-center gap-2">
+        <button
+          class="hover:underline text-white opacity-80 hover:opacity-60 text-sm text-center cursor-pointer"
+        >
+          remember for 30 days
+        </button>
+        <input
+          type="checkbox"
+          class="cursor-pointer"
+          name="rememberPassword"
+          id="remember-password"
+        />
+      </div>
+      <button
+        (click)="onSubmit()"
+        type="submit"
+        class="font-semibold text-lg color-prime w-full p-3 bg-neutral-800 hover:opacity-80 rounded-md"
+      >
+        Sign Up
+      </button>
+      <p
+        class="text-center font-semibold rounded-md text-red-400 bg-red-200 py-2"
+        *ngFor="let errors of errorMessage"
+      >
+        {{ errorMessage }}
+      </p>
+      <div class="flex flex-col justify-center items-between mt-3">
+        <div class="flex justify-start items-center gap-2 mb-2">
+          <span class="opacity-60">Sign Up with</span>
+          <div class="flex justify-start items-center gap-2">
+            <div
+              class="rounded-md bg-neutral-800 w-7 h-7 hover:opacity-85"
+            ></div>
+            <div
+              class="rounded-md bg-neutral-800 w-7 h-7 hover:opacity-85"
+            ></div>
+            <div
+              class="rounded-md bg-neutral-800 w-7 h-7 hover:opacity-85"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <span class="opacity-60">Already have an account</span>
+          <a
+            routerLink="/teampace/login"
+            class="hover:underline color-prime hover:opacity-60 text-sm text-center cursor-pointer"
+          >
+            Sign In
+          </a>
+        </div>
+      </div>
+    </form>
+  </section>
+</section>
