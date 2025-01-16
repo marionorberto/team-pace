@@ -19,7 +19,7 @@
     <div
       *ngIf="!menuColapsed.status"
       (click)="onColapseMenu()"
-      class="rounded-md hover:bg-neutral-900 mb-2 flex flex-col justify-center items-center gap-1"
+      class="rounded-md cursor-pointer hover:bg-neutral-900 mb-2 flex flex-col justify-center items-center gap-1"
     >
       <div class="bg-neutral-700 h-[3px] w-6"></div>
       <div class="bg-neutral-700 h-[3px] w-6"></div>
@@ -185,7 +185,7 @@
           }} rounded-full flex justify-center items-center px-2 pe-4"
         >
           <mat-icon
-            class="text-neutral-500 text-sm flex justify-center items-center"
+            class="text-neutral-500 cursor-pointer text-sm flex justify-center items-center"
             aria-hidden="false"
             >dark_mode</mat-icon
           >
@@ -196,7 +196,7 @@
             displayMode == 'light' ? 'bg-neutral-800' : ''
           }} flex justify-center items-center rounded-full px-2 ps-4"
         >
-          <mat-icon class="text-neutral-500 text-sm" aria-hidden="false"
+          <mat-icon class="text-neutral-500 cursor-pointer text-sm" aria-hidden="false"
             >light_mode</mat-icon
           >
         </span>

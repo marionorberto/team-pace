@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
   value: number = 80;
   color: string = 'orange';
 
-  ngOnInit(){
+      ngOnInit(){
     this.createChart();
   }
 

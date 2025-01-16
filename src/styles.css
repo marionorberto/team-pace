@@ -8,14 +8,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@use "@angular/material" as mat;
 
-@include mat.snack-bar-overrides(
-  (
-    container-color: orange,
-    supporting-text-color: red,
-  )
-);
+:root {
+  --color-prime: #685201;
+  --color-prime-main: #e0b107;
+}
 
 * {
   padding: 0;
@@ -27,6 +24,7 @@ body {
   background-color: #000;
   font-family: "Inter";
   color: white;
+  overflow: hidden;
 }
 
 a {
