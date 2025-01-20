@@ -6,3 +6,11 @@
 .bg-secondary {
   background-color: #e6b400b9;
 }
+
+.left-side {
+  height: 100%;
+  width: 16vw;
+  /* font-weight: 100; */
+  overflow-y: auto;
+  transition: width 0.3s;
+}

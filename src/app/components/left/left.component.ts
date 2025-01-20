@@ -27,12 +27,12 @@ import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 export class LeftComponent implements OnInit {
   recentProject: string[] = ['tasker', 'cybernorb', 'tablecoin'];
   displayMode: string = 'dark';
-  menuColapsed: { status: boolean, width: string } = { status: false, width: '15vw' };
+  menuColapsed: { status: boolean, width: string } = { status: false, width: '15%' };
 
   private _snackBar = inject(MatSnackBar);
 
   ngOnInit(): void {
-    this.menuColapsed.width = '15vw'
+    this.menuColapsed.width = '15%'
   }
 
   openSnackBar() {

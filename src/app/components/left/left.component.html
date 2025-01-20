@@ -1,20 +1,26 @@
 <section
-  [ngStyle]="{ 'w-[6vw]': menuColapsed.status }"
-  class="bg-neutral-900 w-[{{
-    menuColapsed.width
-  }}] w-[15vw] h-full flex flex-col justify-stretch pt-4 items-start ps-4 overflow-x-hidden overflow-y-auto "
+  class="left-side bg-neutral-900 flex flex-col justify-stretch pt-4 items-start ps-4"
 >
   <div class="flex justify-between items-center w-full pe-3">
     <button
+      class="flex- justify-center items-center"
       *ngIf="!menuColapsed.status"
       routerLink="/
     teampace/dashboard/overview"
     >
-      <h1
-        class="font-bold text-amber-50 rounded-md px-3 py-2 bg-slate-800 mb-3"
-      >
-        Team<span class="text-[#e6b400] font-bold">Pace</span>
-      </h1>
+      <div class="flex justify-start items-center">
+        <img
+          src="../../../assets/images/logo-icon.png"
+          class="w-7 h-8"
+          alt=""
+          srcset=""
+        />
+        <h1
+          class="font-bold text-2xl text-neutral-300 rounded-md px-0 py-0 bg-transparent mb-3 font-serif"
+        >
+          Team<span class="text-neutral-400 font-bold">Pace</span>
+        </h1>
+      </div>
     </button>
     <div
       *ngIf="!menuColapsed.status"
@@ -196,7 +202,9 @@
             displayMode == 'light' ? 'bg-neutral-800' : ''
           }} flex justify-center items-center rounded-full px-2 ps-4"
         >
-          <mat-icon class="text-neutral-500 cursor-pointer text-sm" aria-hidden="false"
+          <mat-icon
+            class="text-neutral-500 cursor-pointer text-sm"
+            aria-hidden="false"
             >light_mode</mat-icon
           >
         </span>

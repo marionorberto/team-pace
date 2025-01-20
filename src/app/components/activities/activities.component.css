@@ -19,15 +19,3 @@
 ::ng-deep th[mat-header-cell], td[mat-cell] {
   color:  #747474;
 }
-
-
-::ng-deep td[mat-cell] .Done {
-  color:  red;
-  background: #fff;
-}
-
-
-::ng-deep table[matHeaderRowDef] {
-  color:  red;
-  background: #fff;
-}

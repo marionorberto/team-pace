@@ -1,4 +1,4 @@
-<section class="p-4 px-10 pe-5 flex flex-col justify-center items-start w-full">
+<section class="p-4 px-10 flex flex-col justify-center items-start w-full">
   <section class="w-full flex justify-between items-center">
     <div class="relative w-[65%]">
       <input
@@ -17,7 +17,7 @@
       <div class="relative rounded-full flex justify-center items-center">
         <a
           routerLink="/teampace/dashboard/my-notifications"
-          class="relative hover:shadow-md h-8 w-8 rounded-full cursor-pointer"
+          class="relative hover:shadow-md hover:bg-neutral-900 h-8 w-8 rounded-full cursor-pointer"
         >
           <i
             class="bi bi-bell-fill text-neutral-500 text-lg border-[1px] border-zinc-700 border-opacity-40 h-8 w-8 p-1 rounded-full flex justify-center items-center"
@@ -30,10 +30,10 @@
       </div>
       <a
         routerLink="/teampace/dashboard/my-notifications"
-        class="text-neutral-500 text-lg border-[1px] border-zinc-700 border-opacity-40 h-8 w-8 rounded-full flex justify-center items-center"
+        class="hover:bg-neutral-900 text-neutral-500 text-lg border-[1px] border-zinc-700 border-opacity-40 h-8 w-8 rounded-full flex justify-center items-center"
       >
         <mat-icon
-          class="text-lg text-neutral-500 flex justify-center items-center"
+          class="text-lg text-neutral-500 flex justify-center items-center ms-[6px] mb-[4px]"
           aria-hidden="false"
           fontIcon="settings"
         ></mat-icon>
@@ -100,7 +100,7 @@
       </button>
     </section>
     <section class="flex items-stretch gap-2 mt-2">
-      <section class="w-[85%] h-40 bg-neutral-900 rounded-md">
+      <section class="w-[100%] h-40 bg-neutral-900 rounded-md">
         <div class="flex justify-between items-center py-4 px-4 mt-2">
           <ul class="flex justify-start items-center gap-5">
             <li>
@@ -109,7 +109,7 @@
                   projectNavegationLinkActived == 'backlog'
                     ? 'text-black bg-prime rounded-md py-2 px-4 text-sm font-semibold'
                     : 'text-neutral-600 py-2 px-4'
-                }}"
+                }} hover:text-opacity-70"
                 (click)="onSwitchProjectNavegationLink('backlog')"
               >
                 Backlog
@@ -121,7 +121,7 @@
                   projectNavegationLinkActived == 'roadmap'
                     ? 'text-black bg-prime rounded-md py-2 px-5 text-sm font-semibold'
                     : 'text-neutral-600 py-2 px-4'
-                }}"
+                }} hover:text-opacity-70"
                 (click)="onSwitchProjectNavegationLink('roadmap')"
               >
                 RoadMap
@@ -133,7 +133,7 @@
                   projectNavegationLinkActived == 'active-sprints'
                     ? 'text-black bg-prime rounded-md py-2 px-4 text-sm font-semibold'
                     : 'text-neutral-600 py-2 px-4'
-                }}"
+                }} hover:text-opacity-70"
                 (click)="onSwitchProjectNavegationLink('active-sprints')"
               >
                 Active sprints
@@ -145,7 +145,7 @@
                   projectNavegationLinkActived == 'releases'
                     ? 'text-black bg-prime rounded-md py-2 px-4 text-sm font-semibold'
                     : 'text-neutral-600 py-2 px-4'
-                }}"
+                }} hover:text-opacity-70"
                 (click)="onSwitchProjectNavegationLink('releases')"
               >
                 Releases
@@ -157,7 +157,7 @@
                   projectNavegationLinkActived == 'reports'
                     ? 'text-black bg-prime rounded-md py-2 px-4 text-sm font-semibold'
                     : 'text-neutral-600 py-2 px-4'
-                }}"
+                }} hover:text-opacity-70"
                 (click)="onSwitchProjectNavegationLink('reports')"
               >
                 Reports
@@ -169,7 +169,7 @@
                   projectNavegationLinkActived == 'tasks'
                     ? 'text-black bg-prime rounded-md py-2 px-4 text-sm font-semibold'
                     : 'text-neutral-600 py-2 px-4'
-                }}"
+                }} hover:text-opacity-70"
                 (click)="onSwitchProjectNavegationLink('tasks')"
               >
                 Tasks
@@ -208,101 +208,61 @@
         <section
           class="rounded-md bg-neutral-900 opacity-80 w-full flex-col mt-4"
         >
-          <div class="flex justify-between item-center p-4 pt-7">
+          <div class="flex justify-between item-center p-4 pt-7 rounded-md">
             <span class="text-neutral-500"
-              >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Vitae.</span
+              >Complete your project daily task for progressing
+              <span class="text-neutral-400">(32 tasks)</span>
+              <span
+                class="bg-neutral-700 text-neutral-500 text-sm rounded-xl p-1 font-semibold"
+                >TO DO</span
+              >
+              yet.</span
             >
-            <i class="bi bi-three-dots text-neutral-500"></i>
+            <i
+              class="bi bi-three-dots text-neutral-500 cursor-pointer hover:text-neutral-300"
+            ></i>
           </div>
           <div class="bg-neutral-950 p-4">
-            <ul class="flex justify-between items-center">
-              <li>
-                <button class="text-neutral-600">button</button>
-              </li>
-              <li>
-                <button class="text-neutral-600">button</button>
-              </li>
-              <li>
-                <button class="text-neutral-600">button</button>
-              </li>
-              <li>
-                <button class="text-neutral-600">button</button>
-              </li>
-            </ul>
+            <div class="grid grid-rows-1 grid-cols-4 gap-x-8">
+              <button class="text-neutral-600 font-semibold text-start">
+                TO DO
+              </button>
+              <button class="text-neutral-600 font-semibold text-start">
+                IN PROGRESS
+              </button>
+              <button class="text-neutral-600 font-semibold text-start">
+                REVIEW
+              </button>
+              <button class="text-neutral-600 font-semibold text-start">
+                COMPLETE
+              </button>
+            </div>
           </div>
-          <div class="mt-3 gap-3 flex justify-between items-center">
-            <div class="rounded-md bg-neutral-950 w-72 h-52 p-3"></div>
-            <div class="rounded-md bg-neutral-950 w-72 h-52 p-3"></div>
-            <div class="rounded-md bg-neutral-950 w-72 h-52 p-3"></div>
-            <div class="rounded-md bg-neutral-950 w-72 h-52 p-3"></div>
+          <div
+            class="mt-8 gap-x-3 px-2 flex gap-3 justify-between items-baseline"
+          >
+            <div class="flex flex-col gap-3 items-stretch justify-center">
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+            </div>
+            <div class="flex flex-col gap-3 items-stretch justify-center">
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+            </div>
+            <div class="flex flex-col gap-3 items-stretch justify-center">
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+            </div>
+            <!-- <div class="flex flex-col gap-3 items-stretch justify-center">
+              <app-card-project></app-card-project>
+              <app-card-project></app-card-project>
+            </div> -->
           </div>
         </section>
       </section>
-      <section class="w-[15%] h-80 bg-neutral-900 rounded-md"></section>
     </section>
   </section>
-  <!-- <h3 class="text-xl mt-5 text-white opacity-60 mb-4">Status projects</h3>
-
-  <div class="flex justify-between items-center w-full">
-    <div
-      class="w-48 h-32 rounded-md text-center bg-neutral-950 border-[1px] border-neutral-800 flex flex-col justify-center items-center"
-    >
-      <span class="font-light text-neutral-600">Completed</span>
-    </div>
-    <div
-      class="w-48 h-32 rounded-xl text-center bg-neutral-950 border-[1px] border-neutral-800 flex flex-col justify-center items-center"
-    >
-      <span class="font-light text-neutral-600">Completed</span>
-    </div>
-    <div
-      class="w-48 h-32 rounded-xl text-center bg-neutral-950 border-[1px] border-neutral-800 flex flex-col justify-center items-center"
-    >
-      <span class="font-light text-neutral-600">Pending</span>
-    </div>
-    <div
-      class="w-48 h-32 rounded-xl text-center bg-neutral-950 border-[1px] border-neutral-800 flex flex-col justify-center items-center"
-    >
-      <span class="font-light text-neutral-600">Completed</span>
-    </div>
-  </div> -->
-
-  <!-- <section class="flex justify-between items-center mt-10 w-full">
-    <div>
-      <h2 class="text-white opacity-50 font-semibold text-[16px]">Projects</h2>
-    </div>
-    <div class="flex justify-start items-center gap-2">
-      <button
-        class="bg-[#e6b400] font-semibold opacity-80 hover:opacity-65 rounded-md text-black text-sm px-3 py-1"
-      >
-        Completed
-      </button>
-      <button
-        class="rounded-md text-neutral-600 hover:opacity-80 border-transparent border-[1px] hover:border-neutral-700 text-sm px-3 py-1 font-semibold bg-neutral-950"
-      >
-        In Progress
-      </button>
-      <button
-        class="rounded-md text-neutral-600 hover:opacity-80 border-transparent border-[1px] hover:border-neutral-700 text-sm px-3 py-1 font-semibold bg-neutral-950"
-      >
-        In Progress
-      </button>
-      <button
-        class="rounded-md text-neutral-600 hover:opacity-80 border-transparent border-[1px] hover:border-neutral-700 text-sm px-3 py-1 font-semibold bg-neutral-950"
-      >
-        In Progress
-      </button>
-    </div>
-  </section> -->
-  <!-- 
-  <section
-    class="grid grid-cols-3 grid-rows-1 gap-16 pt-5 overflow-x-visible relative"
-  >
-    <app-card-project></app-card-project>
-    <app-card-project></app-card-project>
-    <app-card-project></app-card-project>
-    <i
-      class="absolute -right-20 hover:bg-neutral-950 cursor-pointer hover:scale-105 top-1/2 text-sm bi bi-chevron-right w-6 h-6 rounded-full bg-neutral-900 text-neutral-600 flex justify-center items-center"
-    ></i>
-  </section> -->
 </section>

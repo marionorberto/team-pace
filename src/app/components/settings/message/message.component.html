@@ -1,42 +1,44 @@
 <section
   class="flex flex-col justify-between items-stretch gap-3 mb-6 mt-8 mx-auto w-[full] bg-neutral-900 rounded-lg p-6 shadow-sm"
 >
-  <h3 class="text-neutral-600 font-semibold">Edit your messages settings</h3>
+  <h3 class="text-neutral-400 font-semibold">Edit your messages settings</h3>
   <form
     action=""
     method="post"
     class="border-[1px] border-neutral-800 mt-4 rounded-md p-4"
   >
-    <h2 class="font-bold my-1 text-neutral-600">Messages Settings</h2>
+    <h2 class="font-bold my-1 text-neutral-500">Messages Settings</h2>
 
-    <div class="flex gap-2 w-full mt-2">
-      <span class="font-medium text-zinc-600 text-[15px]">Default View: </span>
+    <div class="flex gap-2 w-full mt-4 justify-start items-center">
+      <span class="font-medium text-neutral-600 text-[15px]"
+        >Default View:
+      </span>
       <select
         name="messageOptions"
         id="messageOptions"
-        class="bg-zinc-100 p-1 text-[15px] text-zinc-600 rounded-sm"
+        class="bg-neutral-950 p-1 text-[15px] text-neutral-600 rounded-md"
       >
         <option value="read">read</option>
         <option value="unread">unread</option>
         <option value="all">all</option>
       </select>
     </div>
-    <div class="flex gap-2 w-full mt-2">
-      <span class="font-medium text-zinc-600 text-[15px]"
+    <div class="flex gap-2 w-full mt-4 justify-start items-center">
+      <span class="font-medium text-neutral-600 text-[15px]"
         >Email Notifications:
       </span>
 
       <label class="inline-flex items-center cursor-pointer">
         <input type="checkbox" value="" checked class="sr-only peer" />
         <div
-          class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-neutral-600 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[var(--color-prime-main)]"
+          class="relative w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-neutral-600 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-[var(--color-prime-main)]"
         ></div>
       </label>
 
       <select
         name="messageOptions"
         id="messageOptions"
-        class="bg-zinc-100 p-1 text-[15px] text-zinc-600 rounded-sm"
+        class="bg-neutral-950 p-1 text-[15px] text-neutral-600 rounded-md"
       >
         <option value="weekend">weekend</option>
         <option value="daily">daily</option>
@@ -47,31 +49,26 @@
         <option value="fri">fri</option>
       </select>
     </div>
-    <div class="flex gap-1 w-full mt-2">
-      <span class="font-medium text-zinc-600 text-[15px]">Auto Reply: </span>
+    <div class="flex gap-2 w-full mt-4 justify-start items-center">
+      <span class="font-medium text-neutral-600 text-[15px]">Auto Reply: </span>
 
       <label class="inline-flex items-center cursor-pointer">
         <input type="checkbox" value="" class="sr-only peer" />
         <div
-          class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[] dark:peer-focus:ring-neutral-600 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[var(--color-prime-main)]"
+          class="relative w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[] dark:peer-focus:ring-neutral-600 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-[var(--color-prime-main)]"
         ></div>
       </label>
     </div>
-    <span class="text-[13px] text-zinc-400"
+    <span class="text-[13px] text-neutral-400"
       >Once
       <strong class="text-neutral-600 font-semibold">Auto Reply</strong> you
       turn on this, you wont be able to control when reply your message.</span
     >
     <div class="flex gap-2 mt-3">
       <button
-        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium hover:text-white hover:bg-neutral-800 border-[1px] border-neutral-600 text-white bg-neutral-600 hover:shadow-md px-6 py-2 rounded-md shadow-sm"
+        class="text-black bg-prime rounded-md py-2 px-2 text-sm font-semibold hover:opacity-75"
       >
-        Save
-      </button>
-      <button
-        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium hover:text-white hover:bg-neutral-800 border-[1px] border-neutral-600 text-neutral-600 bg-white px-6 py-2 rounded-md hover:shadow-md"
-      >
-        Cancel
+        submit changes
       </button>
     </div>
   </form>
@@ -80,14 +77,16 @@
     method="post"
     class="border-[1px] border-neutral-800 mt-4 rounded-md p-4"
   >
-    <span class="font-bold my-1 text-neutral-600">Span Filter Settings </span>
+    <span class="font-bold my-1 text-neutral-500">Span Filter Settings </span>
 
-    <div class="flex gap-1 w-full mt-2">
-      <span class="font-medium text-zinc-600 text-[15px]">Span Filter: </span>
+    <div class="flex gap-2 w-full mt-4 justify-start items-center">
+      <span class="font-medium text-neutral-600 text-[15px]"
+        >Span Filter:
+      </span>
       <select
         name="messageOptions"
         id="messageOptions"
-        class="bg-zinc-100 p-1 text-zinc-600 text-[15px] rounded-sm"
+        class="bg-neutral-950 p-1 text-[15px] text-neutral-600 rounded-md"
       >
         <option value="low">low</option>
         <option value="medium">medium</option>
@@ -95,26 +94,26 @@
       </select>
     </div>
     <div class="flex gap-1 w-full mt-2">
-      <span class="font-medium text-zinc-600 text-[15px]"
+      <span class="font-medium text-neutral-600 text-[15px]"
         >Block List Senders:
       </span>
       <a
         href=""
-        class="transition-all ms-5 text-[14px] transition-[all 0.4s ease-in-out] font-medium text-zinc-400"
+        class="transition-all ms-5 text-[14px] transition-[all 0.4s ease-in-out] font-medium text-neutral-400"
       >
         see
       </a>
-      <span class="text-zinc-300">|</span>
+      <span class="text-neutral-300">|</span>
       <a
         href=""
-        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium text-zinc-400"
+        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium text-neutral-400"
       >
         add
       </a>
-      <span class="text-zinc-300">|</span>
+      <span class="text-neutral-300">|</span>
       <a
         href=""
-        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium text-zinc-400"
+        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium text-neutral-400"
       >
         remove
       </a>
@@ -122,14 +121,9 @@
 
     <div class="flex gap-2 mt-3">
       <button
-        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium hover:text-white hover:bg-neutral-800 border-[1px] border-neutral-600 text-white bg-neutral-600 hover:shadow-md px-6 py-2 rounded-md shadow-sm"
+        class="text-black bg-prime rounded-md py-2 px-2 text-sm font-semibold hover:opacity-75"
       >
-        Save
-      </button>
-      <button
-        class="transition-all text-[14px] transition-[all 0.4s ease-in-out] font-medium hover:text-white hover:bg-neutral-800 border-[1px] border-neutral-600 text-neutral-600 bg-white px-6 py-2 rounded-md hover:shadow-md"
-      >
-        Cancel
+        submit changes
       </button>
     </div>
   </form>

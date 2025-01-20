@@ -1,0 +1,5 @@
+.right-side{
+  height: 100%;
+  width: 84vw;
+  transition: width 0.3s;
+}

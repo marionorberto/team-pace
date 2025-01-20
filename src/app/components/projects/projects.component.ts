@@ -11,6 +11,7 @@ import { MatIcon } from '@angular/material/icon';
     CommonModule,
     RouterLink,
     MatIcon,
+    CardProjectComponent
 ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'

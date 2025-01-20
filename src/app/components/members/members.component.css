@@ -1,0 +1,9 @@
+::ng-deep table[mat-table] {
+  background-color: #171717;
+  border-radius: 10%;
+}
+
+
+::ng-deep th[mat-header-cell], td[mat-cell] {
+  color:  #747474;
+}
